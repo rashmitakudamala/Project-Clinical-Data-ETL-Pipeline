@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Impact</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #e3faff, #f6fff5);
+            padding: 40px 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .container {
+            background: white;
+            border-radius: 20px;
+            padding: 50px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            max-width: 650px;
+            width: 100%;
+            text-align: center;
+        }
+
+        .patient-box {
+            background: linear-gradient(135deg, #dbeafe, #bfdbfe);
+            border: 3px solid #3b82f6;
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+        }
+
+        .patient-icon {
+            font-size: 60px;
+            margin-bottom: 15px;
+        }
+
+        .patient-name {
+            font-size: 22px;
+            font-weight: bold;
+            color: #1e40af;
+            margin-bottom: 8px;
+        }
+
+        .patient-condition {
+            font-size: 15px;
+            color: #1e3a8a;
+        }
+
+        .pipeline-summary {
+            background: #f8f9fa;
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 30px;
+        }
+
+        .summary-title {
+            font-size: 16px;
+            font-weight: bold;
+            color: #1b8a5a;
+            margin-bottom: 15px;
+        }
+
+        .summary-items {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .summary-item {
+            font-size: 13px;
+            color: #555;
+            background: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            border: 2px solid #e5e7eb;
+        }
+
+        .arrow-down {
+            font-size: 48px;
+            color: #1b8a5a;
+            margin: 20px 0;
+        }
+
+        .result-box {
+            background: linear-gradient(135deg, #1b8a5a, #16a34a);
+            color: white;
+            border-radius: 15px;
+            padding: 35px;
+            box-shadow: 0 6px 20px rgba(27, 138, 90, 0.4);
+        }
+
+        .result-icon {
+            font-size: 50px;
+            margin-bottom: 15px;
+        }
+
+        .result-message {
+            font-size: 20px;
+            font-weight: bold;
+            line-height: 1.5;
+            margin-bottom: 12px;
+        }
+
+        .result-subtitle {
+            font-size: 15px;
+            opacity: 0.95;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 30px 20px;
+            }
+            .result-message {
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="patient-box">
+            <div class="patient-icon">👤</div>
+            <div class="patient-name">Patient: James Russell</div>
+            <div class="patient-condition">Allergic Rhinitis → Immunotherapy → Vitals Monitored</div>
+        </div>
+
+        <div class="pipeline-summary">
+            <div class="summary-title">Our ETL Pipeline Connected:</div>
+            <div class="summary-items">
+                <div class="summary-item">OpenEMR</div>
+                <div class="summary-item">Hermes</div>
+                <div class="summary-item">Primary Care EHR</div>
+                <div class="summary-item">5 Tasks</div>
+                <div class="summary-item">4 Standards</div>
+                <div class="summary-item">1 Patient Story</div>
+            </div>
+        </div>
+
+        <div class="arrow-down">⬇</div>
+
+        <div class="result-box">
+            <div class="result-icon">✓</div>
+            <div class="result-message">
+                That's Not Just an ETL Pipeline
+            </div>
+            <div class="result-subtitle">
+                That's Better Patient Care Through Better Data
+            </div>
+        </div>
+    </div>
+</body>
+</html>

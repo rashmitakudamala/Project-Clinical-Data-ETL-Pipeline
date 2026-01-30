@@ -1,0 +1,215 @@
+.container-lg,
+.wrapper,
+.inner {
+    max-width: 100% !important;
+    width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    background: transparent !important;
+    box-shadow: none !important;
+}
+
+.markdown-body table,
+.markdown-body table tbody,
+.markdown-body table tr {
+    margin-left: auto !important;
+    margin-right: auto !important;
+    text-align: center !important;
+}
+
+.markdown-body {
+    background: transparent !important;
+    padding: 20px 60px !important;
+    margin: 0 auto !important;
+    box-shadow: none !important;
+}
+
+body {
+    background: linear-gradient(
+        180deg,
+        #e3faff,
+        #f6fff5,
+        #ffe5f3
+    );
+    margin: 0;
+    padding: 0;
+    font-family: "Times New Roman", Times, serif !important;
+}
+
+* {
+    font-family: "Times New Roman", Times, serif !important;
+}
+
+.page-header {
+    background: linear-gradient(135deg, #b9eff7, #8dd9ff) !important;
+    padding: 70px 20px !important;
+    text-align: center !important;
+    border-bottom: none !important;
+}
+
+.page-header h1 {
+    color: #0F4F91 !important;
+    font-size: 2.8rem !important;
+    font-weight: 900 !important;
+    line-height: 1.2 !important;
+}
+
+.page-header,
+.page-header * {
+    color: #14505c !important;
+}
+
+.page-header p {
+    color: #14505c !important;
+    font-size: 1.2rem !important;
+    font-weight: 600;
+}
+
+.page-header a.btn,
+.page-header a.github-button {
+    background: #1b1b1b !important;
+    color: #FFFFFF !important;
+    padding: 12px 22px !important;
+    border-radius: 10px !important;
+    font-weight: 700 !important;
+    border: 2px solid #000 !important;
+}
+
+.page-header a.btn:hover {
+    background: #f2fcff !important;
+    color: #000 !important;
+}
+
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4,
+.markdown-body h5,
+.markdown-body h6 {
+    font-weight: 900 !important;
+    color: #819fdb !important;
+    text-align: left;
+    font-family: "Times New Roman", Times, serif !important;
+}
+
+.markdown-body h1 {
+    text-align: center;
+    font-weight: 900 !important;
+}
+
+.markdown-body h2 {
+    margin-top: 40px;
+    font-weight: 900 !important;
+}
+
+.markdown-body h3,
+.markdown-body h4,
+.markdown-body h5,
+.markdown-body h6 {
+    font-weight: 900 !important;
+}
+
+.markdown-body table {
+    margin: 30px auto !important;
+    display: table !important;
+    text-align: center !important;
+    border-collapse: separate !important;
+    border-spacing: 0 !important;
+    width: auto !important;
+    border-radius: 16px !important;
+    overflow: hidden !important;
+    box-shadow: 0 8px 30px rgba(194, 91, 156, 0.15) !important;
+}
+
+
+.markdown-body .table-wrapper,
+.markdown-body > div {
+    text-align: center !important;
+}
+
+.markdown-body th {
+    background: linear-gradient(135deg, #ff89d6, #c25b9c) !important;
+    border: none !important;
+    padding: 18px 25px !important;
+    color: #ffffff !important;
+    font-weight: 900 !important;
+    font-size: 1.05rem !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.5px !important;
+    font-family: "Times New Roman", Times, serif !important;
+}
+
+.markdown-body td {
+    background: #ffffff !important;
+    border: none !important;
+    border-bottom: 1px solid #ffe5f3 !important;
+    padding: 16px 25px !important;
+    color: #5a3a51 !important;
+    font-weight: 500 !important;
+    transition: all 0.3s ease !important;
+}
+
+.markdown-body tr:hover td {
+    background: #fff5fb !important;
+    transform: scale(1.01) !important;
+}
+
+.markdown-body tr:last-child td {
+    border-bottom: none !important;
+}
+
+.markdown-body a {
+    color: #0b7ab8 !important;
+    font-weight: 600;
+}
+
+.markdown-body a:hover {
+    color: #045b8d !important;
+}
+
+#backToTop {
+    position: fixed !important;
+    bottom: 30px !important;
+    right: 30px !important;
+    width: 50px !important;
+    height: 50px !important;
+    background: linear-gradient(135deg, #667eea, #764ba2) !important;
+    color: white !important;
+    border: none !important;
+    border-radius: 50% !important;
+    cursor: pointer !important;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4) !important;
+    transition: all 0.3s ease !important;
+    z-index: 9999 !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    font-size: 24px !important;
+    font-weight: bold !important;
+}
+
+#backToTop.show {
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+#backToTop:hover {
+    background: linear-gradient(135deg, #764ba2, #667eea) !important;
+    transform: translateY(-5px) scale(1.1) !important;
+    box-shadow: 0 6px 25px rgba(102, 126, 234, 0.6) !important;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body > .container-lg:first-of-type {
+    padding-top: 40px !important;
+}
+
+.small-img {
+    width: 30%;
+    height: auto;
+}

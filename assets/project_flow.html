@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clinical Story Timeline</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #e3faff, #f6fff5);
+            padding: 40px 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .container {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            max-width: 800px;
+            width: 100%;
+        }
+        h2 {
+            text-align: center;
+            color: #1b8a5a;
+            margin-bottom: 15px;
+            font-size: 24px;
+        }
+        .subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 40px;
+            font-size: 14px;
+        }
+        .patient-header {
+            background: linear-gradient(135deg, #dbeafe, #bfdbfe);
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 40px;
+            text-align: center;
+            border: 2px solid #3b82f6;
+        }
+        .patient-name {
+            font-size: 20px;
+            font-weight: bold;
+            color: #1e40af;
+            margin-bottom: 5px;
+        }
+        .patient-id {
+            font-size: 13px;
+            color: #3b82f6;
+            font-family: 'Courier New', monospace;
+        }
+        .timeline {
+            position: relative;
+            padding: 20px 0;
+        }
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 30px;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: linear-gradient(to bottom, #10b981, #3b82f6, #8b5cf6);
+        }
+        .timeline-item {
+            position: relative;
+            padding-left: 80px;
+            margin-bottom: 40px;
+        }
+        .timeline-icon {
+            position: absolute;
+            left: 13px;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            color: white;
+            z-index: 2;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+        }
+        .timeline-icon.diagnosis {
+            background: linear-gradient(135deg, #10b981, #059669);
+        }
+        .timeline-icon.treatment {
+            background: linear-gradient(135deg, #3b82f6, #2563eb);
+        }
+        .timeline-icon.vitals {
+            background: linear-gradient(135deg, #8b5cf6, #7c3aed);
+        }
+        .timeline-content {
+            background: #f8f9fa;
+            border-radius: 12px;
+            padding: 20px;
+            border-left: 3px solid #e5e7eb;
+        }
+        .resource-type {
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            color: #666;
+            margin-bottom: 5px;
+        }
+        .resource-title {
+            font-size: 16px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        .resource-details {
+            font-size: 13px;
+            color: #555;
+            line-height: 1.6;
+        }
+        .code-badge {
+            display: inline-block;
+            background: white;
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-size: 11px;
+            font-family: 'Courier New', monospace;
+            color: #1b8a5a;
+            border: 1px solid #d1fae5;
+            margin-top: 8px;
+        }
+        .fhir-link {
+            background: linear-gradient(135deg, #fef3c7, #fde68a);
+            border-left: 4px solid #f59e0b;
+            padding: 20px;
+            border-radius: 12px;
+            margin-top: 30px;
+        }
+        .fhir-link h3 {
+            color: #92400e;
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        .fhir-link p {
+            color: #78350f;
+            font-size: 14px;
+            line-height: 1.6;
+            margin-bottom: 10px;
+        }
+        .link-example {
+            background: white;
+            padding: 10px;
+            border-radius: 8px;
+            font-family: 'Courier New', monospace;
+            font-size: 12px;
+            color: #1e40af;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Linked FHIR Resources Tell a Clinical Story</h2>
+        <div class="subtitle">How resource relationships reconstruct the complete patient narrative</div>
+
+        <div class="patient-header">
+            <div class="patient-name">👤 Patient: '9d036484-c661-485c-899d-fcab43d40914'</div>
+            <div class="patient-id">Primary Care EHR ID: {primary_patient_id}</div>
+        </div>
+
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-icon diagnosis">🏥</div>
+                <div class="timeline-content">
+                    <div class="resource-type">Condition (Parent Concept)</div>
+                    <div class="resource-title">Allergic Rhinitis</div>
+                    <div class="resource-details">
+                        Patient diagnosed with allergic rhinitis, a chronic inflammatory condition affecting the nasal mucosa. This serves as the primary diagnosis driving treatment decisions.
+                    </div>
+                    <span class="code-badge">SNOMED CT: 61582004</span>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-icon diagnosis">🔬</div>
+                <div class="timeline-content">
+                    <div class="resource-type">Condition (Child Concept)</div>
+                    <div class="resource-title">Allergic Rhinitis of Nose</div>
+                    <div class="resource-details">
+                        More specific diagnosis locating the allergic reaction to the nasal structures. This refinement provides anatomical precision for clinical documentation.
+                    </div>
+                    <span class="code-badge">SNOMED CT: 232347005</span>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-icon treatment">📊</div>
+                <div class="timeline-content">
+                    <div class="resource-type">Observation (Vital Signs)</div>
+                    <div class="resource-title">Blood Pressure: 120/80 mmHg</div>
+                    <div class="resource-details">
+                        Baseline vital signs recorded to monitor patient safety during immunotherapy. Normal blood pressure readings help assess cardiovascular stability before and during treatment.
+                    </div>
+                    <span class="code-badge">LOINC: 85354-9</span>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-icon vitals">💉</div>
+                <div class="timeline-content">
+                    <div class="resource-type">Procedure</div>
+                    <div class="resource-title">Subcutaneous Immunotherapy</div>
+                    <div class="resource-details">
+                        Treatment initiated to desensitize patient to allergens. This procedure is clinically appropriate for managing perennial allergic rhinitis when medications alone are insufficient.
+                    </div>
+                    <span class="code-badge">SNOMED CT: 180256009</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="fhir-link">
+            <h3>🔗 FHIR Relationships Reconstruct Context</h3>
+            <p>Each resource references the patient through the <strong>subject</strong> field, creating a connected clinical narrative:</p>
+            <div class="link-example">
+"subject": { <br>
+&nbsp;&nbsp;&nbsp;&nbsp;"reference": "Patient/{primary_patient_id}" <br>
+}, <br>
+"code": { <br>
+&nbsp;&nbsp;&nbsp;&nbsp;"coding": [ <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{ <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"system": "http://snomed.info/sct", <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"code": "{parent_id}", <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"display": "{parent_term}" <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} <br>
+&nbsp;&nbsp;&nbsp;&nbsp;] <br>
+}
+            </div>
+
+            <p style="margin-top: 15px;">These connections enable EHR systems to display the complete story: <strong>diagnosis → vitals → procedure</strong> — all linked through standardized FHIR references.</p>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ETL Pipeline Overview</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .container {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            max-width: 1000px;
+            width: 100%;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 35px;
+            font-size: 26px;
+        }
+        .pipeline {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 40px;
+            gap: 15px;
+        }
+        .system-box {
+            flex: 1;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 30px 20px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
+        }
+        .system-box h2 {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        .system-box p {
+            font-size: 13px;
+            opacity: 0.9;
+        }
+        .arrow-box {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+        }
+        .arrow {
+            font-size: 36px;
+            color: #667eea;
+            font-weight: bold;
+        }
+        .arrow-label {
+            background: #f8f9fa;
+            padding: 6px 14px;
+            border-radius: 15px;
+            font-size: 11px;
+            font-weight: 600;
+            color: #667eea;
+            border: 2px solid #667eea;
+            white-space: nowrap;
+        }
+        .tasks-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+        .task-card {
+            background: #f8f9fa;
+            padding: 20px 15px;
+            border-radius: 12px;
+            text-align: center;
+            border-top: 4px solid #667eea;
+            transition: transform 0.2s;
+        }
+        .task-card:hover {
+            transform: translateY(-5px);
+        }
+        .task-number {
+            width: 35px;
+            height: 35px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 16px;
+            margin: 0 auto 12px;
+        }
+        .task-title {
+            font-size: 13px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 8px;
+        }
+        .task-resource {
+            font-size: 11px;
+            color: #666;
+            background: white;
+            padding: 4px 8px;
+            border-radius: 8px;
+            margin-top: 8px;
+        }
+        .key-findings {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            padding: 25px;
+            border-radius: 15px;
+            margin-top: 20px;
+        }
+        .key-findings h3 {
+            font-size: 18px;
+            margin-bottom: 15px;
+        }
+        .findings-list {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+        }
+        .finding-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            font-size: 13px;
+        }
+        .finding-icon {
+            font-size: 18px;
+            min-width: 20px;
+        }
+        @media (max-width: 768px) {
+            .pipeline {
+                flex-direction: column;
+            }
+            .arrow {
+                transform: rotate(90deg);
+            }
+            .tasks-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .findings-list {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>ETL Pipeline: OpenEMR → Primary Care EHR</h1>
+
+        <div class="pipeline">
+            <div class="system-box">
+                <h2>SOURCE</h2>
+                <p>OpenEMR FHIR Server</p>
+            </div>
+
+            <div class="arrow-box">
+                <div class="arrow">→</div>
+                <div class="arrow-label">Hermes</div>
+            </div>
+
+            <div class="system-box">
+                <h2>TARGET</h2>
+                <p>Primary Care EHR</p>
+            </div>
+        </div>
+
+        <div class="tasks-grid">
+            <div class="task-card">
+                <div class="task-number">1</div>
+                <div class="task-title">Parent Concept</div>
+                <div class="task-resource">Patient + Condition</div>
+            </div>
+
+            <div class="task-card">
+                <div class="task-number">2</div>
+                <div class="task-title">Child Concept</div>
+                <div class="task-resource">Condition</div>
+            </div>
+
+            <div class="task-card">
+                <div class="task-number">3</div>
+                <div class="task-title">Observation</div>
+                <div class="task-resource">BP: 120/80</div>
+            </div>
+
+            <div class="task-card">
+                <div class="task-number">4</div>
+                <div class="task-title">Procedure</div>
+                <div class="task-resource">Immunotherapy</div>
+            </div>
+
+            <div class="task-card">
+                <div class="task-number">5</div>
+                <div class="task-title">HL7 v2</div>
+                <div class="task-resource">ADT Message</div>
+            </div>
+        </div>
+
+        <div class="key-findings">
+            <h3>KEY FINDINGS</h3>
+            <div class="findings-list">
+                <div class="finding-item">
+                    <span class="finding-icon">✓</span>
+                    <span>Successfully mapped SNOMED parent → child concepts</span>
+                </div>
+                <div class="finding-item">
+                    <span class="finding-icon">⚠</span>
+                    <span>No BP observations in OpenEMR - created new</span>
+                </div>
+                <div class="finding-item">
+                    <span class="finding-icon">⚠</span>
+                    <span>No procedures in OpenEMR - created new</span>
+                </div>
+                <div class="finding-item">
+                    <span class="finding-icon">✓</span>
+                    <span>Validated all FHIR resources successfully</span>
+                </div>
+                <div class="finding-item">
+                    <span class="finding-icon">✓</span>
+                    <span>Generated HL7 v2 with ICD-10 mapping</span>
+                </div>
+                <div class="finding-item">
+                    <span class="finding-icon">✓</span>
+                    <span>2/5 resources created from scratch</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

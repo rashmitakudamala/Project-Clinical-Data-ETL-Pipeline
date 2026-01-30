@@ -1,0 +1,50 @@
+{
+  "resourceType": "Procedure",
+  "meta": {
+    "versionId": "1"
+  },
+  "text": {
+    "status": "generated",
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Subcutaneous allergen immunotherapy for perennial allergic rhinitis</div>"
+  },
+  "status": "completed",
+  "code": {
+    "coding": [
+      {
+        "system": "http://snomed.info/sct",
+        "code": "180256009",
+        "display": "Subcutaneous immunotherapy"
+      }
+    ],
+    "text": "Subcutaneous immunotherapy"
+  },
+  "subject": {
+    "reference": "Patient/12"
+  },
+  "performedDateTime": "2008-09-04",
+  "performer": [
+    {
+      "actor": {
+        "reference": "Practitioner/8",
+        "display": "Dr. Careful"
+      }
+    }
+  ],
+  "reasonCode": [
+    {
+      "concept": {
+        "text": "Perennial allergic rhinitis not controlled with medication"
+      }
+    }
+  ],
+  "followUp": [
+    {
+      "text": "Follow-up visit in 4 weeks"
+    }
+  ],
+  "note": [
+    {
+      "text": "First dose of maintenance allergen immunotherapy administered without complications."
+    }
+  ]
+}
