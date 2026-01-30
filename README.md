@@ -21,7 +21,7 @@ The pipeline:
 
 The project website generated from this repository can be accessed here:
 
-👉 <https://pages.github.iu.edu/psurgi/FA25_B581_Final_Project_OpenEMR_Group4/>
+👉 <https://rashmitakudamala.github.io/Project-Clinical-Data-ETL-Pipeline/>
 
 ---
 
